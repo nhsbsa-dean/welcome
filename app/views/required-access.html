@@ -1,0 +1,89 @@
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - edit the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title -->
+{% block pageTitle %}
+  Required access
+{% endblock %}
+
+<!-- For adding a breadcrumb -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
+{% block beforeContent %}
+{{ breadcrumb({
+    items: [
+      {
+        href: "/",
+        text: "Home"
+      },
+      {
+        href: "/frontend-community",
+        text: "Frontend community"
+      }
+    ],
+    href: "/required-access",
+    text: "Required access"
+  }) }}
+{% endblock %}
+
+<!-- For adding a back link -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/back-link -->
+{% block outerContent %}
+{% endblock %}
+
+<!-- For adding page content -->
+<!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+
+  <div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <!-- Change the page heading -->
+      <h1 class="nhsuk-heading-l">
+        Required access
+      </h1>
+
+      <p class="nhsuk-body-l">Here is a list of stuff you will need as frontend</p>
+      <div class="nhsuk-warning-callout">
+        <h2 class="nhsuk-warning-callout__label">
+          <span role="text">
+            Any questions?
+          </span>
+        </h2>
+        <p>If you are unsure on getting access to anything, check in with Lee or your line manager Jamie.</p>
+        <p>Some access and accounts will be created for you by admin and some you will need to do yourself.</p>
+      </div>
+
+      <ul class="nhsuk-list nhsuk-list--bullet">
+          <li>Jira and Confluence (project sprint board and information)</li>
+          <li>NHS email</li>
+          <li>Microsoft teams (used for remote team meetings)</li>
+          <li>Etarmis (work time, flexi, annual leave)</li>
+          <li>Gitlab (production code for project)</li>
+          <li>Amazon workspace (access to project dev and test environments)</li>
+          <li>OpenVPN (vpn to access the project repositories securely)</li>
+          <li>Github (used for prototyping)</li>
+          <li>Heroku (hosting prototypes)</li>
+          <li>Slack (you should be added to the digital slack, but I would suggest joining the GOV.UK slack also as this has a lot of information talked about daily, <a href="https://technology.blog.gov.uk/join-the-conversation/" target="_blank">gov.uk slack</a>)</li>
+          <li>IntelliJ (suggetsed IDEA for working on OHS)</li>
+          <li>Any other IDE of your choice</li>
+          <li>Node installed</li>
+          <li>Node Version Manager (we sometimes need to jump between versions of node depending on the application we are trying to run)</li>
+          <li>Adobe Acrobat Pro (this is mainly used for making PDFs accessible, check with Jamie about licensing)</li>
+      </ul>
+
+      
+
+      <a class="nhsuk-button" href="used-daily">Continue</a>
+
+      <!-- End of content -->
+
+    </div>  
+
+  </div>
+{% endblock %}

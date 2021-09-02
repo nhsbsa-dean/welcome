@@ -1,0 +1,87 @@
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - edit the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title -->
+{% block pageTitle %}
+OHS call centre
+{% endblock %}
+
+<!-- For adding a breadcrumb -->
+{% block beforeContent %}
+{{ breadcrumb({
+items: [
+{
+href: "/",
+text: "Home"
+},
+{
+href: "/frontend-community",
+text: "Frontend community"
+},
+{
+href: "/required-access",
+text: "Required access"
+},
+{
+href: "/used-daily",
+text: "Used daily"
+}
+],
+href: "/your-project",
+text: "Your project"
+}) }}
+{% endblock %}
+
+<!-- For adding a back link -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/back-link -->
+{% block outerContent %}
+{% endblock %}
+
+<!-- For adding page content -->
+<!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+
+<div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-two-thirds">
+
+        <!-- Change the page heading -->
+        <h1 class="nhsuk-heading-l">
+            Get healthcare cover for traveling abroad project
+            <span class="nhsuk-caption-l nhsuk-caption--bottom">also known as crew 1</span>
+        </h1>
+
+        <p>Here is the team (I have probably missed someone)</p>
+        <ul class="nhsuk-list nhsuk-u-margin-bottom-7">
+            <li>Andrew Grant – Delivery Manager
+            <li>Augustine Nwafor – Automation Test
+            <li>Christian Enfield – Developer
+            <li>Daniel O’Riordan-Collin – Solutions Designer
+            <li>Danielle Taylor – Product Owner
+            <li>Kriss Craik – Senior Business Analyst
+            <li>Leigh Bromiley – User Researcher
+            <li>Lisa Forde – Content Designer
+            <li>Louise White – UX Designer
+            <li>Phill Meredith – Senior Service Designer
+            <li>Pradnya Awate – Developer
+            <li>Ray Wallace-Watson – Professional Lead Solution Designer
+            <li>Shailesh Walke – Developer
+            <li>Suraj Gudekar – Automation Test
+            <li>Yamini Shrivastava – Automation Test
+            <li>Victoria Hutchinson (aka Tori) – Lead Delivery Manager
+        </ul>
+
+
+        <a class="nhsuk-button" href="setup">Continue</a>
+
+        <!-- End of content -->
+
+    </div>
+
+</div>
+{% endblock %}

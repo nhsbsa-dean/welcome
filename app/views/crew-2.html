@@ -1,0 +1,84 @@
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - edit the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title -->
+{% block pageTitle %}
+OHS call centre
+{% endblock %}
+
+<!-- For adding a breadcrumb -->
+{% block beforeContent %}
+{{ breadcrumb({
+items: [
+{
+href: "/",
+text: "Home"
+},
+{
+href: "/frontend-community",
+text: "Frontend community"
+},
+{
+href: "/required-access",
+text: "Required access"
+},
+{
+href: "/used-daily",
+text: "Used daily"
+}
+],
+href: "/your-project",
+text: "Your project"
+}) }}
+{% endblock %}
+
+<!-- For adding a back link -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/back-link -->
+{% block outerContent %}
+{% endblock %}
+
+<!-- For adding page content -->
+<!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+
+<div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-two-thirds">
+
+        <!-- Change the page heading -->
+        <h1 class="nhsuk-heading-l">
+            OHS admin project
+            <span class="nhsuk-caption-l nhsuk-caption--bottom">also known as crew 2</span>
+        </h1>
+
+        <p>Here is the team (I have probably missed someone)</p>
+        <ul class="nhsuk-list nhsuk-u-margin-bottom-7">
+            <li>Phil Scally – Lead Dev</li>
+            <li>Aditya Gupta – Java Dev</li>
+            <li>Rahul Panchal – Java Dev</li>
+            <li>Vijay Navle – Java Dev</li>
+            <li>Shashi Singh – Dev Ops</li>
+            <li>Pooja Gawali – Automation Test</li>
+            <li>Rajashreee Zaware – Automation Test</li>
+            <li>Jyothi Buddaraju – Automation Test</li>
+            <li>David Siddens (aka Sidd) - Apprentice Developer</li>
+            <li>Kirtesh Chauhan – Business Analyst</li>
+            <li>Nitesh Chhedda – Delivery Manager</li>
+            <li>Louise White – UX Designer</li>
+            <li>Victoria Hutchinson (aka Tori) – Lead Delivery Manager</li>
+        </ul>
+
+
+        <a class="nhsuk-button" href="crew-1">Continue</a>
+
+        <!-- End of content -->
+
+    </div>
+
+</div>
+{% endblock %}

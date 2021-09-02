@@ -1,0 +1,79 @@
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - edit the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title -->
+{% block pageTitle %}
+  Used daily
+{% endblock %}
+
+<!-- For adding a breadcrumb -->
+{% block beforeContent %}
+{{ breadcrumb({
+    items: [
+      {
+        href: "/",
+        text: "Home"
+      },
+      {
+        href: "/frontend-community",
+        text: "Frontend community"
+      },
+      {
+        href: "/required-access",
+        text: "Required access"
+      }
+    ],
+    href: "/used-daily",
+    text: "Used daily"
+  }) }}
+{% endblock %}
+
+<!-- For adding a back link -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/back-link -->
+{% block outerContent %}
+{% endblock %}
+
+<!-- For adding page content -->
+<!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+
+  <div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <!-- Change the page heading -->
+      <h1 class="nhsuk-heading-l">
+        Applications and tools used daily
+      </h1>
+
+      <p class="nhsuk-body-l">Here is a list of some applications and tools you will use daily</p>
+
+      <ul class="nhsuk-list nhsuk-list--bullet">
+        <li>IntelliJ</li>
+        <li>IDE of your choice</li>
+        <li>WAVE tool for accessibility testing</li>
+        <li>AXE tool for accessibility testing</li>
+        <li>Lighthouse tool for accessibility testing</li>
+        <li>Voice Over on Safari for screen reader testing</li>
+        <li>Gitlab</li>
+        <li>Terminal</li>
+        <li>Jira</li>
+        <li>Microsoft teams</li>
+        <li>Slack</li>
+      </ul>
+
+      
+
+      <a class="nhsuk-button" href="your-project">Continue</a>
+
+      <!-- End of content -->
+
+    </div>  
+
+  </div>
+{% endblock %}

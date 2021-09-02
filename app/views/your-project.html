@@ -1,0 +1,96 @@
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - edit the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title -->
+{% block pageTitle %}
+  Your project
+{% endblock %}
+
+<!-- For adding a breadcrumb -->
+{% block beforeContent %}
+{{ breadcrumb({
+    items: [
+      {
+        href: "/",
+        text: "Home"
+      },
+      {
+        href: "/frontend-community",
+        text: "Frontend community"
+      },
+      {
+        href: "/required-access",
+        text: "Required access"
+      },
+      {
+        href: "/used-daily",
+        text: "Used daily"
+      }
+    ],
+    href: "/your-project",
+    text: "Your project"
+  }) }}
+{% endblock %}
+
+<!-- For adding a back link -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/back-link -->
+{% block outerContent %}
+{% endblock %}
+
+<!-- For adding page content -->
+<!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+
+  <div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <!-- Change the page heading -->
+      <h1 class="nhsuk-heading-l">
+        Your project
+        <span class="nhsuk-caption-l nhsuk-caption--bottom">Overseas Healthcare Service (OHS)</span>
+      </h1>
+      
+      <p>The current services being worked on in OHS are:</p>
+
+      <ul class="nhsuk-list nhsuk-list--bullet">
+          <li>OHS admin (internal facing service)</li>
+          <li>Get healthcare cover for traveling abroad (external and internal facing service)</li>
+          <li>Cost recovery (internal facing service)</li>
+      </ul>
+
+      <details class="nhsuk-details">
+        <summary class="nhsuk-details__summary">
+          <span class="nhsuk-details__summary-text">
+            What are external and internal services?
+          </span>
+        </summary>
+        <div class="nhsuk-details__text">
+          <h2 class="nhsuk-heading-s nhsuk-u-margin-bottom-1">External services</h2>
+          <p>These are services which are accessed by the public.</p>
+          <h2 class="nhsuk-heading-s nhsuk-u-margin-bottom-1">Internal services</h2>
+          <p>These are services which are accessed by NHS staff and trusts</p>
+        </div>
+      </details>
+
+      <p>You will be frontend developer on two of these projects:</p>
+      <ul class="nhsuk-list nhsuk-list--bullet">
+          <li>OHS admin</li>
+          <li>Get healthcare cover for traveling abroad</li>
+      </ul>
+
+      <p>When you have access to confluence, you will be able to vew a lot of information about the project. <a href="https://bsa2468.atlassian.net/wiki/spaces/BP564/overview">About the overseas healthcare service</a></p>
+
+      <a class="nhsuk-button" href="crew-2">Continue</a>
+
+      <!-- End of content -->
+
+    </div>  
+
+  </div>
+{% endblock %}

@@ -1,0 +1,79 @@
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - edit the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title -->
+{% block pageTitle %}
+OHS call centre
+{% endblock %}
+
+<!-- For adding a breadcrumb -->
+{% block beforeContent %}
+{{ breadcrumb({
+items: [
+{
+href: "/",
+text: "Home"
+},
+{
+href: "/frontend-community",
+text: "Frontend community"
+},
+{
+href: "/required-access",
+text: "Required access"
+},
+{
+href: "/used-daily",
+text: "Used daily"
+}
+],
+href: "/your-project",
+text: "Your project"
+}) }}
+{% endblock %}
+
+<!-- For adding a back link -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/back-link -->
+{% block outerContent %}
+{% endblock %}
+
+<!-- For adding page content -->
+<!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+
+<div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-two-thirds">
+
+        <!-- Change the page heading -->
+        <h1 class="nhsuk-heading-l">
+            Getting set up
+        </h1>
+
+        <p>When you are finished introduction stuff and ready to be working on the project I have asked Christian Enfield to help get you set up with OHS on your machine because there's a few things to sort out for it.</p> 
+        <p>I'm sure he will explain what each application is and what we need to have running.</p>
+
+        <p>The main applications you will use are:</p>
+        <ul>
+          <li>OHS-UI (OHS admin application)</li>
+          <li>CRA-UI (Get healthcare cover for traveling abroad application)</li>
+          <li>Entitlements (stored user information, this mainly just runs in the background)</li>  
+        </ul>
+
+        <p>You will have access to these which Christian will link you to, when you have a Gitlab account created for you.</p>
+
+        <p class="nhsuk-u-margin-bottom-7">Set up instructions are on confluence too, <a href="https://bsa2468.atlassian.net/wiki/spaces/BP564/pages/815693896/OHS+-+Development+Setup" target="_blank">ohs dev setup</a>.</p>
+
+        <a class="nhsuk-button" href="resources">Continue</a>
+
+        <!-- End of content -->
+
+    </div>
+
+</div>
+{% endblock %}

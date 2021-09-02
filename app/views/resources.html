@@ -1,0 +1,102 @@
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - edit the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title -->
+{% block pageTitle %}
+OHS call centre
+{% endblock %}
+
+<!-- For adding a breadcrumb -->
+{% block beforeContent %}
+{{ breadcrumb({
+items: [
+{
+href: "/",
+text: "Home"
+},
+{
+href: "/frontend-community",
+text: "Frontend community"
+},
+{
+href: "/required-access",
+text: "Required access"
+},
+{
+href: "/used-daily",
+text: "Used daily"
+},
+{
+href: "/your-project",
+text: "Your project"
+}
+],
+href: "/resources",
+text: "Resources"
+}) }}
+{% endblock %}
+
+<!-- For adding a back link -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/back-link -->
+{% block outerContent %}
+{% endblock %}
+
+<!-- For adding page content -->
+<!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+
+<div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-two-thirds">
+
+        <!-- Change the page heading -->
+        <h1 class="nhsuk-heading-l">
+            Resources
+        </h1>
+
+        <p>Here are some helpful resources, but also just ask anyone anything, they are all more than happy to help.</p>
+
+        <h2 class="nhsuk-heading-m">General OHS resources</h2>
+        <ul class="nhsuk-list nhsuk-list--bullet">
+            <li><a href="https://teamup.com/ksom4pzstq8dmisbqr" target="_blank">Team annual leave calendar</a></li>
+            <li><a href="https://dps-gitlab.service.nhsbsa/hecs/overseas-health" target="_blank">All OHS gitlab repos</a></li>
+        </ul>
+
+        <h2 class="nhsuk-heading-m">OHS admin resources</h2>
+        <ul class="nhsuk-list nhsuk-list--bullet">
+            <li><a href="https://bsa2468.atlassian.net/secure/RapidBoard.jspa?projectKey=OHSN&rapidView=458" target="_blank">OHS admin active sprint</a></li>
+            <li><a href="https://bsa2468.atlassian.net/secure/RapidBoard.jspa?rapidView=458&projectKey=OHSN&view=planning.nodetail&selectedIssue=OHSN-4750&issueLimit=100" target="_blank">OHS admin backlog</a></li>
+            <li><a href="https://dps-gitlab.service.nhsbsa/hecs/overseas-health/ohs-ui" target="_blank">OHS admin repo</a></li>
+            <li><a href="https://oh-prototype.herokuapp.com/" target="_blank">OHS admin old prototype (ask Louise White for login)</a></li>
+            <li><a href="https://new-ohs-prototype.herokuapp.com/" target="_blank">OHS admin new prototype (ask Louise White for login)</a></li>
+        </ul>
+
+        <h2 class="nhsuk-heading-m">Get healthcare cover for traveling abroad (CRA) resources</h2>
+        <ul class="nhsuk-list nhsuk-list--bullet">
+            <li><a href="https://bsa2468.atlassian.net/jira/software/c/projects/CRAT/boards/636" target="_blank">CRA active sprint</a></li>
+            <li><a href="https://bsa2468.atlassian.net/jira/software/c/projects/CRAT/boards/636/backlog?issueLimit=100" target="_blank">CRA backlog</a></li>
+            <li><a href="https://dps-gitlab.service.nhsbsa/hecs/overseas-health/cra-ui" target="_blank">CRA repo</a></li>
+            <li><a href="https://ehic-prototype.herokuapp.com/" target="_blank">CRA prototype (ask Louise White for login)</a></li>
+        </ul>
+
+        <h2 class="nhsuk-heading-m">Other resources</h2>
+        <ul class="nhsuk-list nhsuk-list--bullet">
+            <li><a href="https://bsa2468.atlassian.net/wiki/spaces/CoP/pages/2098462750/Resources" target="_blank">Frontend resources on confluence</a></li>
+            <li><a href="https://bsa2468.atlassian.net/wiki/spaces/CoP/pages/1569423494/Accessibility+test+checklists" target="_blank">Accessibility testing (this is the checklists ran by testers not us but good to know)</a></li>
+            <li><a href="https://bsa2468.atlassian.net/wiki/spaces/CoP/pages/707952698/Resources+documents+and+guides" target="_blank">Designer resources and guides but some can be helpful for you too</a></li>
+        </ul>
+
+
+        <a class="nhsuk-button" href="final-welcome">Continue</a>
+
+        <!-- End of content -->
+
+    </div>
+
+</div>
+{% endblock %}

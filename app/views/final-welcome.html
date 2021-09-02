@@ -1,0 +1,80 @@
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - edit the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title -->
+{% block pageTitle %}
+OHS call centre
+{% endblock %}
+
+<!-- For adding a breadcrumb -->
+{% block beforeContent %}
+{{ breadcrumb({
+items: [
+{
+href: "/",
+text: "Home"
+},
+{
+href: "/frontend-community",
+text: "Frontend community"
+},
+{
+href: "/required-access",
+text: "Required access"
+},
+{
+href: "/used-daily",
+text: "Used daily"
+},
+{
+href: "/your-project",
+text: "Your project"
+}
+],
+href: "/resources",
+text: "Resources"
+}) }}
+{% endblock %}
+
+<!-- For adding a back link -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/back-link -->
+{% block outerContent %}
+{% endblock %}
+
+<!-- For adding page content -->
+<!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+
+<div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-two-thirds">
+
+        <!-- Change the page heading -->
+        <h1 class="nhsuk-heading-xl">
+            Finally
+        </h1>
+
+        <p>You should now have everything you need to start off with.</p>
+
+        <p>Lee will be a good buddy for you when you first start, and then I will help out as much as i can when I return from annual leave</p>
+
+        <p>I will be back on Monday 20th September</p>
+        <p>I will have one week left on the OHS project where I can help you with any questions you might have. I will still be able to help after then too, just wont be actually on the project.</p>
+
+        <p>I am also very active on Slack so be able to chat daily</p>
+
+        <p>One last thing...</p>
+
+        <h2 class="nhsuk-heading-l nhsuk-u-margin-top-1 nhsuk-u-margin-bottom-9">Welcome to the NHSBSA</h2>
+
+        <!-- End of content -->
+
+    </div>
+
+</div>
+{% endblock %}

@@ -1,0 +1,79 @@
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - edit the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title -->
+{% block pageTitle %}
+  Frontend Communtiy
+{% endblock %}
+
+<!-- For adding a breadcrumb -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
+{% block beforeContent %}
+  {{ breadcrumb({
+    items: [
+      {
+        href: "/",
+        text: "Home"
+      }
+    ],
+    href: "/frontend-community",
+    text: "Frontend community"
+  }) }}
+{% endblock %}
+
+<!-- For adding a back link -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/back-link -->
+{% block outerContent %}
+{% endblock %}
+
+<!-- For adding page content -->
+<!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+
+  <div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <!-- Change the page heading -->
+      <h1 class="nhsuk-heading-l">
+        The Frontend Community
+      </h1>
+
+      <p>This is the frontend community including, line manager, service design lead, permanent staff and contractors.</p>
+
+      <h2 class="nhsuk-heading-m nhsuk-u-margin-bottom-3">Line manager</h2>
+      <p>Jamie Thompson</p>
+      <h2 class="nhsuk-heading-m nhsuk-u-margin-bottom-3">Service design lead</h2>
+      <p>Chris Hewitson</p>
+      <h2 class="nhsuk-heading-m nhsuk-u-margin-bottom-3">Frontend developers</h2>
+      <ul class="nhsuk-list">
+          <li>Chris Moore (Newcastle Stella House, Digital Department)</li>
+          <li>Lee Bodak (Newcastle Stella House, Digital Department)</li>
+          <li>Will Cooper (Newcastle Stella House, Digital Department)</li>
+          <li>George Rowley (Middlebrook, Digital Department)</li>
+          <li>Pranali Mejari (Contractor India)</li>
+          <li>Shaun Conner (Newcastle Stella House, Technology Department)</li>
+          <li>Dean Cobb (Newcastle Stella House, Digital Department)</li>
+      </ul>
+      <h2 class="nhsuk-heading-m nhsuk-u-margin-bottom-3">Node developer</h2>
+      <p>Damian Nicholson (Newcastle Stella House, Digital Department)</p>
+      <h2 class="nhsuk-heading-m nhsuk-u-margin-bottom-3">Apprentice frontend developers</h2>
+      <ul class="nhsuk-list nhsuk-u-margin-bottom-7">
+          <li>Alex Parker (Newcastle Stella House, Digital Department)</li>
+          <li>Alex Youngman (Newcastle Stella House, Digital Department)</li>
+          <li>Anthony Eglon (Newcastle Stella House, Digital Department)</li>
+      </ul>
+
+      <a class="nhsuk-button" href="required-access">Continue</a>
+
+      <!-- End of content -->
+
+    </div>  
+
+  </div>
+{% endblock %}
